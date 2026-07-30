@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force C:\\\\Leddeh\\\\site\\\\assets)",
+      "PowerShell(Copy-Item \"C:\\\\Leddeh\\\\Photo on 8-28-20 at 3.32 PM.jpeg\" C:\\\\Leddeh\\\\site\\\\assets\\\\julie-portrait.jpeg)",
+      "WebFetch(domain:juliemarino.nyc)",
+      "PowerShell($r = Invoke-WebRequest -Uri \"https://juliemarino.nyc/\" -UseBasicParsing; $r.Content | Out-File -Encoding utf8 \"$env:TEMP\\\\claude\\\\C--Leddeh\\\\ef3abc7a-392f-4ff0-bd3e-a7c64047aca7\\\\scratchpad\\\\home.html\"; $r.Content.Length)",
+      "PowerShell($s = \"$env:TEMP\\\\claude\\\\C--Leddeh\\\\ef3abc7a-392f-4ff0-bd3e-a7c64047aca7\\\\scratchpad\"; foreach \\($p in @\\(@\\(\"welcome-to-paradise\",\"wtp\"\\), @\\(\"the-writers-salon\",\"salon\"\\), @\\(\"privacy-policy\",\"privacy\"\\)\\)\\) { try { $r = Invoke-WebRequest -Uri \\(\"https://juliemarino.nyc/\" + $p[0] + \"/\"\\) -UseBasicParsing; $r.Content | Out-File -Encoding utf8 \\($s + \"\\\\\" + $p[1] + \".html\"\\); Write-Output \\($p[0] + \" : \" + $r.Content.Length\\) } catch { Write-Output \\($p[0] + \" FAILED: \" + $_.Exception.Message\\) } })",
+      "PowerShell(New-Item -ItemType Directory -Force C:\\\\Leddeh\\\\site\\\\assets\\\\img | Out-Null; $imgs = @{ \"welcome-to-paradise-featured.webp\" = \"https://juliemarino.nyc/wp-content/uploads/2026/05/welcome-to-paradise-featured-image.webp\"; \"welcome-to-paradise-poster.webp\" = \"https://juliemarino.nyc/wp-content/uploads/2026/03/welcome-to-paradise-trw.webp\"; \"steamboat-willie-poster.webp\" = \"https://juliemarino.nyc/wp-content/uploads/2026/01/Steamboat-1-copy.webp\"; \"salon-speakeasy.webp\" = \"https://juliemarino.nyc/wp-content/uploads/2025/12/1930-Cocktail-Bar-A-True-Speakeasy-6000-x-4000-7-1024x640-1.webp\"; \"favicon.png\" = \"https://juliemarino.nyc/wp-content/uploads/2024/07/site-logo-favicon-150x150.png\" }; foreach \\($k in $imgs.Keys\\) { try { Invoke-WebRequest -Uri $imgs[$k] -OutFile \\(\"C:\\\\Leddeh\\\\site\\\\assets\\\\img\\\\\" + $k\\) -UseBasicParsing; } catch { Write-Output \\($k + \" FAILED: \" + $_.Exception.Message\\) } }; Get-ChildItem C:\\\\Leddeh\\\\site\\\\assets\\\\img | Select-Object Name, Length)",
+      "PowerShell(Get-ChildItem -Recurse -File C:\\\\Leddeh\\\\site | ForEach-Object { $_.FullName.Replace\\(\"C:\\\\Leddeh\\\\site\\\\\", \"\"\\) })"
+    ]
+  }
+}
