@@ -1,24 +1,24 @@
 /* ============================================================
    juliemarino.nyc — site-wide stylesheet
-   Palette: Pantone 1245C (golden ochre) base
-   Type: Space Grotesk (headings) + Inter (body)
+   Palette: turmeric + paprika
+   Type: Fraunces (headings) + Inter (body)
    ============================================================ */
 
 :root {
-  /* Pantone 1245C family */
-  --gold:      #C6951C;   /* the base — Pantone 1245C */
-  --gold-deep: #A1780F;
-  --bg:        #F7EDD3;   /* pale tint of the base — page background */
-  --band:      #EFE0B2;   /* deeper tint for section bands */
-  --card:      #FFFBEF;
-  --line:      #DFCD9C;
+  /* turmeric family */
+  --gold:      #D6A21C;
+  --gold-deep: #A8750B;
+  --bg:        #FFF4D9;
+  --band:      #F4DEAA;
+  --card:      #FFFAF0;
+  --line:      #DFC584;
 
-  /* contrast + accents */
-  --aubergine: #33224E;   /* headings, footer, primary buttons */
-  --ink:       #453723;   /* body text — warm umber, not black */
-  --muted:     #7C6B4C;
-  --violet:    #6C3FA4;   /* the exotic note — links, live tags */
-  --teal:      #1E6E62;   /* secondary accent — sparingly */
+  /* paprika + warm neutrals */
+  --aubergine: #762A1D;
+  --ink:       #49392D;
+  --muted:     #7B6555;
+  --violet:    #A83E26;
+  --teal:      #8A4A2C;
   --max: 1080px;
 }
 
@@ -34,8 +34,8 @@ body {
 }
 
 h1, h2, h3, h4, .brand {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 600;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: var(--aubergine);
@@ -75,7 +75,7 @@ nav a.active {
   padding-bottom: 2px;
 }
 
-/* ---------- Home hero — bold 1245C color block ---------- */
+/* ---------- Home hero — turmeric color block ---------- */
 .hero-block { background: var(--gold); border-bottom: 1px solid var(--gold-deep); }
 .hero {
   display: grid;
@@ -91,22 +91,20 @@ nav a.active {
   margin-bottom: 0.9rem;
 }
 .hero h1 {
+  font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(3.2rem, 8vw, 5.4rem);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 .tagline {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(1.25rem, 2.6vw, 1.6rem);
-  font-weight: 600;
+  font-weight: 400;
   color: #FFFBEF;
   text-shadow: 0 1px 2px rgba(74, 58, 20, 0.35);
-  min-height: 2.6em;
   margin-bottom: 1.1rem;
-  transition: opacity 0.6s ease;
 }
-.tagline.fading { opacity: 0; }
-.hero .lede { font-size: 1.08rem; color: #4A3A14; max-width: 34em; margin-bottom: 2rem; }
+.hero .lede { font-size: 1.08rem; color: #49301F; max-width: 34em; margin-bottom: 2rem; }
 
 .btn-row { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 .btn {
@@ -133,8 +131,8 @@ nav a.active {
 
 /* ---------- Interior page hero (compact gold band) ---------- */
 .page-hero { background: var(--gold); border-bottom: 1px solid var(--gold-deep); padding: 3rem 0 2.6rem; }
-.page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; }
-.page-hero .lede { color: #4A3A14; max-width: 44em; margin-top: 0.8rem; font-size: 1.08rem; }
+.page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 400; }
+.page-hero .lede { color: #49301F; max-width: 44em; margin-top: 0.8rem; font-size: 1.08rem; }
 .page-hero .eyebrow { margin-bottom: 0.6rem; }
 
 /* ---------- Sections ---------- */
@@ -170,6 +168,23 @@ section { padding: 4rem 0; }
 .tag-live { background: var(--violet); color: #FFFBEF; }
 .tag-dev  { background: transparent; color: var(--teal); border: 1px solid var(--teal); }
 .tag-new  { background: transparent; color: var(--violet); border: 1px solid var(--violet); }
+.tag-marquee {
+  background: var(--aubergine);
+  color: var(--card);
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px var(--aubergine);
+  padding: 0.38rem 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+}
+.produced-play-feature { max-width: 760px; }
+.produced-play-feature .card { padding: 2rem; }
+.tag-featured-status {
+  font-size: 0.9rem;
+  padding: 0.5rem 1.1rem;
+  margin-bottom: 0.35rem;
+}
 
 /* ---------- Article / prose pages ---------- */
 .layout {
@@ -199,8 +214,8 @@ aside .card { position: sticky; top: 5.5rem; }
 }
 .license-box h3 { margin-top: 0; font-size: 1.05rem; }
 .license-box h4 {
-  font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal);
+  font-family: 'Fraunces', Georgia, serif; font-size: 0.9rem; font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal);
   margin: 1.1rem 0 0.25rem;
 }
 .license-box h4:first-of-type { margin-top: 0.9rem; }
@@ -221,6 +236,23 @@ aside .card { position: sticky; top: 5.5rem; }
 }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
+/* ---------- Off Book collection / individual works ---------- */
+.collection-note { color: var(--muted); font-size: 0.92rem; }
+.work-collection .card { min-height: 220px; }
+.work-collection .featured-work { border-left: 5px solid var(--violet); }
+.work-wrap { max-width: 820px; margin: 0 auto; padding: 3.5rem 1.5rem 4.5rem; }
+.work-back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; font-weight: 500; }
+.work-body h2 { margin: 2.2rem 0 0.8rem; }
+.work-body p { margin-bottom: 1.15rem; }
+.work-body .character { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--aubergine); margin-bottom: 0.15rem; }
+.work-body .stage-direction { color: var(--muted); font-style: italic; }
+.audio-player { margin: 1.8rem 0 2.2rem; }
+.audio-player iframe { width: 100%; height: 166px; border: 0; }
+.story-art { width: 120px; border-radius: 6px; }
+.story-art.left { float: left; margin: 0.35rem 1.2rem 0.8rem 0; }
+.story-art.right { float: right; margin: 0.35rem 0 0.8rem 1.2rem; }
+.art-credit { clear: both; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); font-size: 0.85rem; }
+
 /* ---------- Category list (Off Book) ---------- */
 .cat-list { list-style: none; margin: 1rem 0 0; counter-reset: cat; }
 .cat-list li {
@@ -237,20 +269,20 @@ aside .card { position: sticky; top: 5.5rem; }
 
 /* ---------- Footer ---------- */
 footer.site {
-  background: var(--aubergine); color: #CFC5DF;
+  background: var(--aubergine); color: #F1D7C9;
   padding: 3rem 0 2.5rem; font-size: 0.92rem;
 }
 footer.site .wrap { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2.5rem; }
 footer.site h4 {
-  font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; font-weight: 600;
+  font-family: 'Fraunces', Georgia, serif; font-size: 0.82rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
   margin-bottom: 0.8rem;
 }
-footer.site a { color: #EFE8FA; }
+footer.site a { color: #FFF4E5; }
 footer.site a:hover { color: var(--gold); }
 footer.site .fine {
-  grid-column: 1 / -1; border-top: 1px solid #4A3868;
-  padding-top: 1.4rem; margin-top: 0.6rem; color: #9C8FB5; font-size: 0.82rem;
+  grid-column: 1 / -1; border-top: 1px solid #984838;
+  padding-top: 1.4rem; margin-top: 0.6rem; color: #D7A78E; font-size: 0.82rem;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem;
 }
 
@@ -262,13 +294,9 @@ footer.site .fine {
   nav ul { gap: 0.55rem 1.05rem; font-size: 0.85rem; }
   .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 0 3.5rem; }
   .portrait { justify-self: start; max-width: 340px; }
-  .tagline { min-height: 3.4em; }
   .cards, .cards-2 { grid-template-columns: 1fr; }
   .layout { grid-template-columns: 1fr; gap: 2rem; }
+  .story-art.left, .story-art.right { float: none; margin: 1rem 0; }
   aside .card { position: static; }
   footer.site .wrap { grid-template-columns: 1fr; gap: 1.8rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tagline { transition: none; }
 }
