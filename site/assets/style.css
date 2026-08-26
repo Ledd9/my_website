@@ -180,6 +180,8 @@ section { padding: 4rem 0; }
 }
 .produced-play-feature { max-width: 760px; }
 .produced-play-feature .card { padding: 2rem; }
+.plays-index-grid .card .cover { aspect-ratio: 16 / 10; }
+.plays-index-grid .card h3 a { color: inherit; }
 .tag-featured-status {
   font-size: 0.9rem;
   padding: 0.5rem 1.1rem;
